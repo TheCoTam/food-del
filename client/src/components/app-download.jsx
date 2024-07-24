@@ -2,7 +2,10 @@ import { assets } from "@/assets";
 
 const AppDownload = () => {
   return (
-    <div className="mt-[100px] text-[2vw] font-semibold text-center">
+    <div
+      className="mt-[100px] text-[max(2vw, 25px)] font-semibold text-center"
+      id="mobile-app"
+    >
       <p>
         For Better Experience Download <br /> Tomato App
       </p>

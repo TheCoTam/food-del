@@ -11,7 +11,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
   return (
     <div className="animate-fadeIn1s shadow-lg rounded-lg">
       <div className="rounded-t-xl overflow-hidden relative">
-        <img src={image} alt={name} />
+        <img src={image} alt={name} className="w-full object-cover" />
         {!cartItems[id] ? (
           <Plus
             onClick={() => addToCart(id)}

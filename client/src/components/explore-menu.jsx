@@ -45,7 +45,7 @@ const MENU_LIST = [
 
 const ExploreMenu = ({ category, setCategory }) => {
   return (
-    <div className="flex flex-col gap-5 mt-10">
+    <div className="flex flex-col gap-5 mt-10" id="menu">
       <h1 className="text-2xl font-bold">Explore our menu</h1>
       <p className="max-w-[60%]">explore menu text</p>
       <div className="flex justify-between items-center gap-7 text-center my-5 overflow-x-scroll">
