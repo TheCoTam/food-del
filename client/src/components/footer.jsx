@@ -4,7 +4,6 @@ import {
   Linkedin,
   Twitter,
   PhoneOutgoing,
-  Phone,
   AtSign,
 } from "lucide-react";
 
@@ -16,9 +15,9 @@ const Footer = () => {
           <img src={assets.logo} alt="logo" className="w-[30%]" />
           <p>Hello from footer</p>
           <div className="flex items-center gap-5">
-            <Facebook />
-            <Twitter />
-            <Linkedin />
+            <Facebook className="bg-blue-600 rounded-md cursor-pointer p-[2px]" />
+            <Twitter className="text-blue-600 bg-white cursor-pointer rounded-md p-[2px]" />
+            <Linkedin className="bg-blue-600 rounded-md cursor-pointer p-[2px]" />
           </div>
         </div>
         <div className="flex flex-col gap-5">
@@ -44,7 +43,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <hr className="bg-gray-500 h-[2px] w-full" />
+      <hr className="bg-teal-5  00 h-[2px] w-full" />
       <p>Copyright 2024 TheCoTam - All Right Reserved.</p>
     </div>
   );

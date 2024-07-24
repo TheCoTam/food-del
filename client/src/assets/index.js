@@ -13,6 +13,8 @@ import menu_5 from "./menu_5.png";
 import menu_6 from "./menu_6.png";
 import menu_7 from "./menu_7.png";
 import menu_8 from "./menu_8.png";
+import play_store from "./play_store.png";
+import app_store from "./app_store.png";
 
 export const assets = {
   logo,
@@ -22,6 +24,8 @@ export const assets = {
   upload_area,
   parcel_icon,
   rating_stars,
+  play_store,
+  app_store,
 };
 
 export const menu_list = {
