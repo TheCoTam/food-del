@@ -4,6 +4,7 @@ import order_icon from "./order_icon.png";
 import profile_image from "./profile_image.png";
 import upload_area from "./upload_area.png";
 import parcel_icon from "./parcel_icon.png";
+import rating_stars from "./rating_starts.png";
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
 import menu_3 from "./menu_3.png";
@@ -20,6 +21,7 @@ export const assets = {
   profile_image,
   upload_area,
   parcel_icon,
+  rating_stars,
 };
 
 export const menu_list = {
