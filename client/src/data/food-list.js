@@ -33,7 +33,7 @@ import food_32 from "@/assets/food_32.png";
 
 export const food_list = [
   {
-    _id: 1,
+    _id: "1",
     name: "Greak salad",
     image: food_1,
     price: 120000,
@@ -42,7 +42,7 @@ export const food_list = [
     category: "salad",
   },
   {
-    _id: 2,
+    _id: "2",
     name: "Veg salad",
     image: food_2,
     price: 65213,
@@ -51,7 +51,7 @@ export const food_list = [
     category: "salad",
   },
   {
-    _id: 3,
+    _id: "3",
     name: "Clover Salad",
     image: food_3,
     price: 879561,
@@ -60,7 +60,7 @@ export const food_list = [
     category: "salad",
   },
   {
-    _id: 4,
+    _id: "4",
     name: "Chicken Salad",
     image: food_4,
     price: 50000,
@@ -69,7 +69,7 @@ export const food_list = [
     category: "salad",
   },
   {
-    _id: 5,
+    _id: "5",
     name: "Lasagna Rolls",
     image: food_5,
     price: 122222,
@@ -78,7 +78,7 @@ export const food_list = [
     category: "rolls",
   },
   {
-    _id: 6,
+    _id: "6",
     name: "Peri Peri Rolls",
     image: food_6,
     price: 123341,
@@ -87,7 +87,7 @@ export const food_list = [
     category: "rolls",
   },
   {
-    _id: 7,
+    _id: "7",
     name: "Chicken Rolls",
     image: food_7,
     price: 78454,
@@ -96,7 +96,7 @@ export const food_list = [
     category: "rolls",
   },
   {
-    _id: 8,
+    _id: "8",
     name: "Veg Rolls",
     image: food_8,
     price: 78678,
@@ -105,7 +105,7 @@ export const food_list = [
     category: "rolls",
   },
   {
-    _id: 9,
+    _id: "9",
     name: "Ripple Ice Cream",
     image: food_9,
     price: 786786,
@@ -114,7 +114,7 @@ export const food_list = [
     category: "deserts",
   },
   {
-    _id: 10,
+    _id: "10",
     name: "Fruit Ice Cream",
     image: food_10,
     price: 784534,
@@ -123,7 +123,7 @@ export const food_list = [
     category: "deserts",
   },
   {
-    _id: 11,
+    _id: "11",
     name: "Jar Ice Cream",
     image: food_11,
     price: 143504,
@@ -132,7 +132,7 @@ export const food_list = [
     category: "deserts",
   },
   {
-    _id: 12,
+    _id: "12",
     name: "Vanilla Ice Cream",
     image: food_12,
     price: 782077,
@@ -141,7 +141,7 @@ export const food_list = [
     category: "deserts",
   },
   {
-    _id: 13,
+    _id: "13",
     name: "Chicken Sandwich",
     image: food_13,
     price: 98432165,
@@ -150,7 +150,7 @@ export const food_list = [
     category: "sandwich",
   },
   {
-    _id: 14,
+    _id: "14",
     name: "Vegan Sandwich",
     image: food_14,
     price: 261230,
@@ -159,7 +159,7 @@ export const food_list = [
     category: "sandwich",
   },
   {
-    _id: 15,
+    _id: "15",
     name: "Grilled Sandwich",
     image: food_15,
     price: 651320654,
@@ -168,7 +168,7 @@ export const food_list = [
     category: "sandwich",
   },
   {
-    _id: 16,
+    _id: "16",
     name: "Bread Sandwich",
     image: food_16,
     price: 9865132,
@@ -177,7 +177,7 @@ export const food_list = [
     category: "sandwich",
   },
   {
-    _id: 17,
+    _id: "17",
     name: "Cup Cake",
     image: food_17,
     price: 1346,
@@ -186,7 +186,7 @@ export const food_list = [
     category: "cake",
   },
   {
-    _id: 18,
+    _id: "18",
     name: "Vegan Cake",
     image: food_18,
     price: 546130,
@@ -195,7 +195,7 @@ export const food_list = [
     category: "cake",
   },
   {
-    _id: 19,
+    _id: "19",
     name: "Butterscotch Cake",
     image: food_19,
     price: 263411,
@@ -204,7 +204,7 @@ export const food_list = [
     category: "cake",
   },
   {
-    _id: 20,
+    _id: "20",
     name: "Sliced Cake",
     image: food_20,
     price: 98533569,
@@ -213,7 +213,7 @@ export const food_list = [
     category: "cake",
   },
   {
-    _id: 21,
+    _id: "21",
     name: "Garlic Mushroom",
     image: food_21,
     price: 120000,
@@ -222,7 +222,7 @@ export const food_list = [
     category: "pure-veg",
   },
   {
-    _id: 22,
+    _id: "22",
     name: "Fried Cauliflower",
     image: food_22,
     price: 65213,
@@ -231,7 +231,7 @@ export const food_list = [
     category: "pure-veg",
   },
   {
-    _id: 23,
+    _id: "23",
     name: "Mix Veg Pulao",
     image: food_23,
     price: 879561,
@@ -240,7 +240,7 @@ export const food_list = [
     category: "pure-veg",
   },
   {
-    _id: 24,
+    _id: "24",
     name: "Rice Zucchini",
     image: food_24,
     price: 50000,
@@ -249,7 +249,7 @@ export const food_list = [
     category: "pure-veg",
   },
   {
-    _id: 25,
+    _id: "25",
     name: "Cheese Pasta",
     image: food_25,
     price: 122222,
@@ -258,7 +258,7 @@ export const food_list = [
     category: "pasta",
   },
   {
-    _id: 26,
+    _id: "26",
     name: "Tomato Pasta",
     image: food_26,
     price: 123341,
@@ -267,7 +267,7 @@ export const food_list = [
     category: "pasta",
   },
   {
-    _id: 27,
+    _id: "27",
     name: "Creamy Pasta",
     image: food_27,
     price: 78454,
@@ -276,7 +276,7 @@ export const food_list = [
     category: "pasta",
   },
   {
-    _id: 28,
+    _id: "28",
     name: "Chicken Pasta",
     image: food_28,
     price: 78678,
@@ -285,7 +285,7 @@ export const food_list = [
     category: "pasta",
   },
   {
-    _id: 29,
+    _id: "29",
     name: "Butter Noodles",
     image: food_29,
     price: 786786,
@@ -294,7 +294,7 @@ export const food_list = [
     category: "noodles",
   },
   {
-    _id: 30,
+    _id: "30",
     name: "Veg Noodles",
     image: food_30,
     price: 784534,
@@ -303,7 +303,7 @@ export const food_list = [
     category: "noodles",
   },
   {
-    _id: 31,
+    _id: "31",
     name: "Somen Noodles",
     image: food_31,
     price: 143504,
@@ -312,7 +312,7 @@ export const food_list = [
     category: "noodles",
   },
   {
-    _id: 32,
+    _id: "32",
     name: "Cooked Noodles",
     image: food_32,
     price: 782077,

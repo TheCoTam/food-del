@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
-      <div className="w-[80%] m-auto">
+      <div className="w-[95%] sm:w-[80%] m-auto">
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<Home />} />

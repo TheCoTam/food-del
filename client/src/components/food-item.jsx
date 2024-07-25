@@ -19,15 +19,19 @@ const FoodItem = ({ id, name, price, description, image }) => {
           />
         ) : (
           <div className="flex items-center gap-[10px] bg-white rounded-[50px] p-1 absolute bottom-[15px] right-[15px]">
-            <Minus
-              onClick={() => removeFromCart(id)}
-              className="w-5 h-5 text-red-500 cursor-pointer bg-red-200 hover:bg-red-300 active:bg-red-400 rounded-full"
-            />
+            <button>
+              <Minus
+                onClick={() => removeFromCart(id)}
+                className="w-5 h-5 text-red-500 cursor-pointer bg-red-200 hover:bg-red-300 active:bg-red-400 rounded-full"
+              />
+            </button>
             <p>{cartItems[id]}</p>
-            <Plus
-              onClick={() => addToCart(id)}
-              className="w-5 h-5 text-green-600 cursor-pointer bg-green-200 hover:bg-green-300 active:bg-green-400 rounded-full"
-            />
+            <button>
+              <Plus
+                onClick={() => addToCart(id)}
+                className="w-5 h-5 text-green-600 cursor-pointer bg-green-200 hover:bg-green-300 active:bg-green-400 rounded-full"
+              />
+            </button>
           </div>
         )}
       </div>

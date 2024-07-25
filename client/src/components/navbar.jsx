@@ -1,7 +1,8 @@
 import { assets } from "@/assets";
 import { Link } from "react-router-dom";
 import { Search, ShoppingBasket } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { StoreContext } from "@/context/StoreContext";
 
 const MENU = [
   { name: "Home", href: "home" },
@@ -12,10 +13,13 @@ const MENU = [
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
+  const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
     <div className="flex items-center justify-between py-5">
-      <img src={assets.logo} alt="logo" className="w-[120px] lg:w-[150px]" />
+      <Link to="/">
+        <img src={assets.logo} alt="logo" className="w-[120px] lg:w-[150px]" />
+      </Link>
       <ul className="md:flex gap-5 md:text-base lg:text-lg hidden">
         {MENU.map((item) => {
           if (item.href === "home") {
@@ -53,8 +57,12 @@ const Navbar = ({ setShowLogin }) => {
       <div className="flex items-center gap-3 md:gap-5 lg:gap-10">
         <Search className="text-black" />
         <div className="relative">
-          <ShoppingBasket className="text-black" />
-          <div className="absolute min-w-[10px] min-h-[10px] rounded-full bg-orange-500 -top-[8px] -right-[8px]"></div>
+          <Link to="/cart">
+            <ShoppingBasket className="text-black" />
+          </Link>
+          {getTotalCartAmount() !== 0 && (
+            <div className="absolute min-w-[10px] min-h-[10px] rounded-full bg-orange-500 -top-[8px] -right-[8px]"></div>
+          )}
         </div>
         <button
           onClick={() => setShowLogin(true)}
