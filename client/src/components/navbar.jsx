@@ -10,7 +10,7 @@ const MENU = [
   { name: "Contact Us", href: "contact-us" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
 
   return (
@@ -56,7 +56,10 @@ const Navbar = () => {
           <ShoppingBasket className="text-black" />
           <div className="absolute min-w-[10px] min-h-[10px] rounded-full bg-orange-500 -top-[8px] -right-[8px]"></div>
         </div>
-        <button className="text-base border-2 border-solid border-teal-400 hover:bg-teal-300 active:bg-teal-400 py-1 md:py-2 px-2 md:px-4 rounded-2xl cursor-pointer transition">
+        <button
+          onClick={() => setShowLogin(true)}
+          className="text-base border-2 border-solid border-teal-400 hover:bg-teal-300 active:bg-teal-400 py-1 md:py-2 px-2 md:px-4 rounded-2xl cursor-pointer transition"
+        >
           Sign In
         </button>
       </div>
