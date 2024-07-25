@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { TicketCheck } from "lucide-react";
 
 import { StoreContext } from "@/context/StoreContext";
@@ -6,8 +7,8 @@ import { convertCurrency } from "@/lib/utils";
 
 const CartTotal = () => {
   const { getTotalCartAmount } = useContext(StoreContext);
-
-  if (getTotalCartAmount() === 0) return null;
+  const navigate = useNavigate();
+  const deliveryFee = getTotalCartAmount() === 0 ? 0 : 20000;
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-3 gap-5 my-5">
@@ -21,15 +22,18 @@ const CartTotal = () => {
           <hr />
           <div className="flex items-center justify-between">
             <p>Delivery Fee</p>
-            <p>{convertCurrency(20000)}</p>
+            <p>{convertCurrency(deliveryFee)}</p>
           </div>
           <hr />
           <div className="flex items-center justify-between">
             <p>Total</p>
-            <p>{convertCurrency(getTotalCartAmount() + 20000)}</p>
+            <p>{convertCurrency(getTotalCartAmount() + deliveryFee)}</p>
           </div>
         </div>
-        <button className="self-center w-max bg-orange-300 px-3 py-2 rounded-lg uppercase">
+        <button
+          className="self-center w-max bg-orange-300 px-3 py-2 rounded-lg uppercase"
+          onClick={() => navigate("/order")}
+        >
           proceed to checkout
         </button>
       </div>
