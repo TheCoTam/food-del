@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 const Add = () => {
   const url = "http://localhost:4000";
   const [image, setImage] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -21,6 +22,7 @@ const Add = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const formData = new FormData();
     formData.append("name", data.name);
@@ -30,7 +32,6 @@ const Add = () => {
     formData.append("image", image);
 
     const response = await axios.post(`${url}/api/food/add`, formData);
-    console.log(response);
     if (response.data.success) {
       toast.success("Product added successfully");
       setData({
@@ -43,10 +44,11 @@ const Add = () => {
     } else {
       toast.error("Something went wrong");
     }
+    setIsSubmitting(false);
   };
 
   return (
-    <div className="w-[70%] ml-[5vw] mt-[50px]">
+    <div className="w-[80%] ml-[5vw] mt-[50px]">
       <form className="flex flex-col gap-5 w-1/2" onSubmit={handleSubmit}>
         <label
           htmlFor="image"
@@ -79,7 +81,9 @@ const Add = () => {
           name="name"
           onChange={handleChange}
           value={data.name}
+          disabled={isSubmitting}
           className="border-2 p-3 rounded-lg"
+          required
         />
         <p className="font-semibold">Product Description</p>
         <textarea
@@ -88,7 +92,9 @@ const Add = () => {
           name="description"
           onChange={handleChange}
           value={data.description}
+          disabled={isSubmitting}
           className="border-2 p-3 rounded-lg"
+          required
         />
         <div className="flex items-center gap-5">
           <div className="flex flex-col gap-5 w-1/2">
@@ -96,6 +102,7 @@ const Add = () => {
             <select
               onChange={handleChange}
               name="category"
+              disabled={isSubmitting}
               className="border-2 p-1 rounded-lg"
             >
               <option value="salad">Salad</option>
@@ -116,11 +123,17 @@ const Add = () => {
               name="price"
               onChange={handleChange}
               value={data.price}
+              disabled={isSubmitting}
               className="border-2 p-3 rounded-lg"
+              required
             />
           </div>
         </div>
-        <button type="submit" className="w-max px-3 py-2 rounded-xl border-2">
+        <button
+          type="submit"
+          className="w-max px-3 py-2 rounded-xl border-2 self-center border-rose-500 bg-rose-400 hover:bg-rose-500 active:bg-rose-600 text-gray-700 font-semibold"
+          disabled={isSubmitting}
+        >
           ADD
         </button>
       </form>

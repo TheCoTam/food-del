@@ -8,6 +8,8 @@ import Orders from "@/pages/orders";
 import { Toaster } from "react-hot-toast";
 
 function App() {
+  const url = "http://localhost:4000";
+
   return (
     <div>
       <Toaster />
@@ -16,9 +18,9 @@ function App() {
       <div className="flex">
         <Sidebar />
         <Routes>
-          <Route path="/add" element={<Add />} />
-          <Route path="/list" element={<List />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/add" element={<Add url={url} />} />
+          <Route path="/list" element={<List url={url} />} />
+          <Route path="/orders" element={<Orders url={url} />} />
         </Routes>
       </div>
     </div>
