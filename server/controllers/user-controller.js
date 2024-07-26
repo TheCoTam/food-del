@@ -7,6 +7,9 @@ import validator from "validator";
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
+    if (!email || !password) {
+      return res.json({ success: false, message: "Please fill in all fields" });
+    }
     // validate email
     if (!validator.isEmail(email)) {
       return res.json({ success: false, message: "Email is not valid" });
@@ -39,8 +42,12 @@ const createToken = (id) => {
 
 // register user
 export const registerUser = async (req, res) => {
-  const { name, password, email } = req.body;
+  const { name, password, email, confirmPassword } = req.body;
   try {
+    if (password !== confirmPassword) {
+      return res.json({ success: false, message: "Passwords do not match" });
+    }
+
     // check if user already exists
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
