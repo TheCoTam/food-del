@@ -6,16 +6,19 @@ const MENU = [
     title: "Add item",
     icon: Plus,
     to: "/add",
+    className: "text-green-500",
   },
   {
     title: "List items",
     icon: List,
     to: "/list",
+    className: "text-blue-500",
   },
   {
     title: "Orders",
     icon: Package,
     to: "/orders",
+    className: "text-orange-500",
   },
 ];
 
@@ -33,7 +36,7 @@ const Sidebar = () => {
               }`
             }
           >
-            <item.icon />
+            <item.icon className={item.className} />
             <span className="hidden md:block">{item.title}</span>
           </NavLink>
         ))}
