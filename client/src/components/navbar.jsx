@@ -88,7 +88,10 @@ const Navbar = ({ setShowLogin }) => {
           <div className="group relative space-y-[1px]">
             <User className="rounded-full bg-teal-400 p-1 w-7 h-7 cursor-pointer" />
             <div className="absolute hidden group-hover:flex flex-col gap-2 py-2 px-3 rounded-md border-2 border-solid border-emerald-500 bg-gray-200 right-0 z-[1]">
-              <button className="flex items-center gap-2 cursor-pointer hover:bg-gray-300 active:bg-gray-400 px-3 py-2 rounded-lg">
+              <button
+                onClick={() => navigate("/myOrders")}
+                className="flex items-center gap-2 cursor-pointer hover:bg-gray-300 active:bg-gray-400 px-3 py-2 rounded-lg"
+              >
                 <ShoppingBag className="w-5 h-5" />
                 <p>Orders</p>
               </button>

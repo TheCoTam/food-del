@@ -7,7 +7,7 @@ import { StoreContext } from "@/context/StoreContext";
 import axios from "axios";
 
 const Verify = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const { url } = useContext(StoreContext);
   const navigate = useNavigate();
 

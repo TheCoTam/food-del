@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
 import { StoreContext } from "@/context/StoreContext";
 import { convertCurrency } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, token, url, food_list, cartItems } =
@@ -18,6 +19,7 @@ const PlaceOrder = () => {
     country: "",
     phone: "",
   });
+  const navigate = useNavigate();
   const deliveryFee = getTotalCartAmount() === 0 ? 0 : 20000;
 
   const handleChange = (e) => {
@@ -59,6 +61,12 @@ const PlaceOrder = () => {
       toast.error(response.data.message);
     }
   };
+
+  useEffect(() => {
+    if (!token || getTotalCartAmount() === 0) {
+      navigate("/cart");
+    }
+  });
 
   return (
     <form
