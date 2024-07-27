@@ -1,9 +1,12 @@
 import { Package } from "lucide-react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 import { convertCurrency } from "@/lib/utils";
 import { Phone, Milestone } from "lucide-react";
 
 const OrderItem = ({
+  id,
   items,
   name,
   street,
@@ -14,7 +17,24 @@ const OrderItem = ({
   phone,
   length,
   amount,
+  status,
+  url,
+  fetchOrders,
 }) => {
+  const handleChange = async (e) => {
+    const response = await axios.post(url + "/api/order/status", {
+      orderId: id,
+      status: e.target.value,
+    });
+
+    if (response.data.success) {
+      toast.success(response.data.message);
+      await fetchOrders();
+    } else {
+      toast.error(response.data.message);
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-center border-2 border-gray-500 rounded-lg p-2 sm:p-5 gap-3">
       <div className="w-full md:flex-1 flex items-center gap-3">
@@ -46,10 +66,14 @@ const OrderItem = ({
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between w-full md:w-[40%]">
+      <div className="flex items-center justify-between w-full md:w-[50%]">
         <p>Items: {length}</p>
         <p>{convertCurrency(amount)}</p>
-        <select className="border-2 border-orange-400 rounded-md bg-orange-100 p-1">
+        <select
+          onChange={(e) => handleChange(e)}
+          value={status}
+          className="border-2 border-orange-400 rounded-md bg-orange-100 p-1"
+        >
           <option value="Food Processing">Food Processing</option>
           <option value="Out For delivery">Out For delivery</option>
           <option value="Delivered">Delivered</option>

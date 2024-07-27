@@ -28,6 +28,7 @@ const Orders = ({ url }) => {
         {orders.map((order, index) => (
           <OrderItem
             key={index}
+            id={order._id}
             items={order.items}
             name={order.address.name}
             street={order.address.street}
@@ -38,6 +39,9 @@ const Orders = ({ url }) => {
             phone={order.address.phone}
             length={order.items.length}
             amount={order.amount}
+            status={order.status}
+            url={url}
+            fetchOrders={fetchOrders}
           />
         ))}
       </div>
