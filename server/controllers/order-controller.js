@@ -30,7 +30,6 @@ export const placeOrder = async (req, res) => {
 // verifying user's order
 export const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
-  console.log(orderId, success);
   try {
     const order = await orderModel.findById(orderId);
 
@@ -57,6 +56,30 @@ export const userOrders = async (req, res) => {
     const orders = await orderModel.find({ userId: req.body.userId });
 
     res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log("[Order controller]", error);
+    res.json({ success: false, message: "Internal Server Error" });
+  }
+};
+
+// listing orders for admin
+export const listOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({});
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log("[Order controller]", error);
+    res.json({ success: false, message: "Internal Server Error" });
+  }
+};
+
+// updating order status
+export const updateStatus = async (req, res) => {
+  try {
+    await orderModel.findByIdAndUpdate(req.body.orderId, {
+      status: req.body.status,
+    });
+    res.json({ success: true, message: "Status Updated" });
   } catch (error) {
     console.log("[Order controller]", error);
     res.json({ success: false, message: "Internal Server Error" });
