@@ -6,12 +6,17 @@ import { assets } from "@/assets";
 import { convertCurrency } from "@/lib/utils";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } =
+    useContext(StoreContext);
 
   return (
     <div className="animate-fadeIn1s shadow-lg rounded-lg">
       <div className="rounded-t-xl overflow-hidden relative">
-        <img src={image} alt={name} className="w-full object-cover" />
+        <img
+          src={url + "/images/" + image}
+          alt={name}
+          className="w-full object-cover"
+        />
         {!cartItems[id] ? (
           <Plus
             onClick={() => addToCart(id)}
