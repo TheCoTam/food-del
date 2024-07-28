@@ -60,7 +60,10 @@ const MyOrder = () => {
                 {order.status}
               </p>
               <button
-                onClick={() => toast.success("clicked")}
+                onClick={() => {
+                  fetchOrders();
+                  toast.success("Order tracked");
+                }}
                 className="w-max bg-orange-300 hover:bg-orange-400 active:bg-orange-500 py-1 px-2  rounded-md"
               >
                 Track order
